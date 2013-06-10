@@ -1,4 +1,0 @@
-ITS
-===
-
-ITS Final Handin

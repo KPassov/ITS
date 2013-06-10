@@ -4,20 +4,32 @@
 %\usepackage[ansinew]{inputenc} %Bærbar ÆØÅ?
 %\usepackage[latin1]{inputenc} %Bærbar ÆØÅ?
 
+%\usepackage{url} % Allows hyperlinks
+\usepackage[hyphens]{url} %URLs
+\usepackage{graphicx} % Allows figures
+\usepackage{wrapfig} % Wrap figures
+\usepackage{etoolbox} %for configuration of sloppy
+
 %Section style
 \usepackage{xcolor}
+
 \definecolor{secnum}{RGB}{102,102,102} 
+
 \makeatletter
     \def\@seccntformat#1{\llap{\color{secnum}\csname the#1\endcsname\hskip 16pt}}
 \makeatother
 %end section style
+
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{} %adds hbadness to sloppy
+\setlength{\paperheight}{297mm} %Sets the page to an A4
+\setlength{\paperwidth}{210mm}	%Sets the page to an A4
 
 \begin{document}
 
 \begin{titlepage}
 \begin{center}
 \textsc{\Large IT Sikkerhed}\\[0.5cm]
-\textsc{Eksamensopgave}\\[0.5cm]
+\textsc{OPGAVE B: Sikkerhedsanalyse af sociale medier}\\[0.5cm]
 \vspace{2 cm}
 \begin{tabular}{ll}
 Kasper Passov & pvx884\\
@@ -28,24 +40,57 @@ Kasper Passov & pvx884\\
 \tableofcontents
 \end{titlepage}
 
-\section{Introduction}
+\section{Resumé af systemet}
+Facebook, Twitter, LinkedIn og Internt Yammer
+\section{Aktiver}
 
-\subsection{Risk Assessment}
-Jeg kan se danske ord virker nu!
+\section{Sikkerhedsmål}
+
+\section{Trusselsaktører}
+
+\section{Trusler}
+
+\subsection{Relevante angreb}
+\newpage
+\subsubsection{AP's Twitter-konto}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{../Pictures/APTweet.jpg}
+  \end{center}
+  \caption{Tweeten fra hackeren over nyhedsbureauet Associated Press \cite{APTweetSource}}
+\end{figure}
+
+\paragraph{Angreb}
+\url{www.guardian.co.uk/business/2013/apr/23/ap-tweet-hack-wall-street-freefall Her er historien}
+\paragraph{Relevans for BIOmedix}
+
+Et sådan angreb kan fjerne tilid og lade konkurrenter samt ondsindede hacker sprede misinformation in BIOmedix navn 
+\newpage
+\subsubsection{LinkedIn password-lækage}
+
+\paragraph{Angreb}
+\url{arstechnica.com/security/2012/06/8-million-leaked-passwords-connected-to-linkedin/}
+\paragraph{Relevans for BIOmedix}
+
+Et stort leak af passwords fra en sådan side kunne betyde alle BIOmedix' sociale medie sider ville være usikre, hvis det samme password var brugt overalt. Kig information igennem for ændringer, og skift password. SØRG FOR DER ER FORSKELLIGE PASSWORDS TIL ALLE SIDER DER BRUGER SAMME MAIL! 
+
+\section{Sårbarheder}
+
+\section{Modforanstaltninger}
+
+\section{Risici}
+
+\section{Foreslåede modforanstaltninger}
+
+\section{Konklusion}
 \newpage
 \begin{thebibliography}{100}
-\bibitem{proff}
-http://www.proff.dk/firma/restaurant-2-night-aps/frederiksberg/-/1015420983/
-\bibitem{dandom}
-http://www.dandomain.dk/produkter/domain.html
-\bibitem{redhost}
-http://redhost.dk/
-\bibitem{cpsms}
-https://www.cpsms.dk/login/index.php?page=priser
-\bibitem{jobindex}
-http://it.jobindex.dk/cgi/cv/salaryindex.cgi
-\bibitem{marchew}
-Information Technology Project Mannagement\\
-Jack T. Marchewka
+
+
+\bibitem{APTweetSource}
+\url{www.businessinsider.com/ap-hacked-obama-injured-white-house-explosions-2013-4}
+\bibitem{APTweetStory} 
+\url{www.guardian.co.uk/business/2013/apr/23/ap-tweet-hack-wall-street-freefall}
 \end{thebibliography}
 \end{document}
