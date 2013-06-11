@@ -1,12 +1,12 @@
 \documentclass{article}
 
-% \usepackage[utf8]{inputenc} %Stationær ÆØÅ
-\usepackage[ansinew]{inputenc} %Bærbar ÆØÅ?
+ \usepackage[utf8]{inputenc} %Stationær ÆØÅ
+%\usepackage[ansinew]{inputenc} %Bærbar ÆØÅ?
 
 %\usepackage{url} % Allows hyperlinks
 \usepackage[hyphens]{url} %URLs
 \usepackage{graphicx} % Allows figures
-% \usepackage{etoolbox} %for configuration of sloppy
+\usepackage{etoolbox} %for configuration of sloppy
 
 %Section style
 \usepackage{xcolor}
@@ -18,7 +18,7 @@
 \makeatother
 %end section style
 
-% \apptocmd{\sloppy}{\hbadness 10000\relax}{}{} %adds hbadness to sloppy
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{} %adds hbadness to sloppy
 \setlength{\paperheight}{297mm} %Sets the page to an A4
 \setlength{\paperwidth}{210mm}	%Sets the page to an A4
 
@@ -38,23 +38,46 @@ Kasper Passov & pvx884\\
 \tableofcontents
 \end{titlepage}
 
-\section{Resumé af systemet}
-Facebook, Twitter, LinkedIn og Internt Yammer til internt og ekstern kommunikere
-Deler systemerne op i Eksterne (Facebook, Twitter og LinkedIn) Kun kommunikations ansatte der har adgang 
-og interne (Yammer) Alle medarbejdere har en konto.
+\section{Resumé af firma og system}
+\subsection{Firmaets risiko niveau}
+Firmaet BIOmedix er et firma med høj sårbarhed overfor informations tyveri. En lækage af forsknings resultater kan have meget alvorlige konseknverser for BIOmedix, da salg af disse resultater og patenter der er kommet deraf er deres primære inkomstkilde. Dette betyder IT sikkerheden bør være i firmaets fokus for at beskytte disse aktiver. 
 
+\subsection{Resumé af det nye system}
+Der skal indføres fire nye sociale medier i BIOmedix. Dette har jeg valgt at dele op i 2 grupper. 
+
+\paragraph{Eksterne systemer}
+Den ene er 3 sider i de sociale netværker Facebook, Twitter og LinkedIn som jeg vil kalde de eksterne systemer, idet pointer med disse er at give firmaet en mulighed for at kommunikere med folk udenfor firmaet. Jeg har valgt at samle disse systemer i en gruppe da jeg mener der er mange ligheder i hvilke trusler og sårbarheder disse systemer bliver udsat for, og derigennem skal sikkerheden i disse systemer håndteres ens. Kodeord og brugernavne til disse kontoer bliver holdt af kommunikationsafdelingen, som står for opdateringer.
+
+\paragraph{Internt system}
+Det sidste system, Yammer, er et lukket socialt netværk for alle firmaets ansatte. Systemet lader dem blandt andet opdatere arbejdsstatus og danne projektgrupper. Jeg vil referer til dette netværk som et internt system, da mange af de trusler og sårbarheder Yammer er udsat for ville kunne bruges på lignende systemer i fremtiden.
+
+%\subsection{Sikkerhedsmål}
+
+%Sikkerhedsmålet for de eksterne systemer er 
+
+%Internt
+%Et sikkert system der lader ansatte dele information nemt og hurtigt hvor som helst og når som helst.
+
+%Eksternt
+%Et system der lader firmaet snakke og dele information med den bredere befolkning, for f.eks. at finde dygtige medarbejdere og for at reklamere for udviklinger lavet.
 
 \section{Aktiver}
-\subsection{Externe systemer}
-Administrative kontoer skal beskyttes. Mulighed for informationsdeling skal holdes åben.
+\subsection{Eksterne systemer}
+Vores vigtigste aktiv i de eksterne systemer er muligheden for at videregive information til den bredere befolkning. 
 
 \subsection{Interne systemer}
-Informationen på det interne system Yammer skal beskyttes fra udekommende. Ansatte skal have nem og hurtig adgang til information, gerne hvor som helst og når som helst. Ansattes information skal beskyttes. Ansattes brugere og passwords. 
+Informationen på det interne system Yammer skal beskyttes fra udekommende, da der vil være store mængder af kritisk information på dette netværk. Derudover skal ansatte have nem og hurtig adgang til information, gerne hvor som helst og når som helst.
 
 \subsection{Begrundelse for aktiver}
 
-\section{Sikkerhedsmål}
+\paragraph{Spredning af information}
+De eksterne systemers primære funktion er at give firmaet en kommunikations kanal til den brede befolkning. Dette kan både være en nyhed om et gennembrud, et opslag til en ny stilling eller general information om firmaet. Denne aktiv skal beskyttes ved at holde kommunikations linjen åben og så uhindret som mulig.
 
+\paragraph{Information på det interne system}
+Yammer kommer til at indeholde hvad de ansatte arbejder på, hvem de arbejder med, forskningsidéer og filer. Et brud på dette netværk vil blotte alt information BIOmedix har, og gøre det muligt for konkurrenter eller patenttrolde at se hvor langt BIOmedix er med et stykke forskning, og muligvis presse en patent frem inden BIOmedix kan færdiggøre sig. 
+
+\paragraph{Adgang til Yammer}
+Uden de ansattes adgang til Yammer, vil dette cloud system ikke være sikkerheds risikoen værd. Derfor skal det gøres så nemt som muligt for de ansatte at få adgang til Yammer, gerne både på arbejdspladsen og i hvert ansats hjem.  
 
 
 \section{Trusselsaktører}
@@ -92,20 +115,22 @@ Ansatte mister passwords
 \end{figure}
 
 \paragraph{Angreb}
-\url{www.guardian.co.uk/business/2013/apr/23/ap-tweet-hack-wall-street-freefall Her er historien}
+ 
 \paragraph{Relevans for BIOmedix}
 
 Et sådan angreb kan fjerne tilid og lade konkurrenter samt ondsindede hacker sprede misinformation in BIOmedix navn 
 \subsubsection{LinkedIn password-lækage}
 
 \paragraph{Angreb}
-\url{arstechnica.com/security/2012/06/8-million-leaked-passwords-connected-to-linkedin/}
+
 \paragraph{Relevans for BIOmedix}
 
 Et stort leak af passwords fra en sådan side kunne betyde alle BIOmedix' sociale medie sider ville være usikre, hvis det samme password var brugt overalt. Kig information igennem for ændringer, og skift password. SØRG FOR DER ER FORSKELLIGE PASSWORDS TIL ALLE SIDER DER BRUGER SAMME MAIL! 
 
 \section{Sårbarheder}
 
+Ansattes password styrke.
+Kritisk information er ikke på firmastyret servere.
 
 
 \section{Modforanstaltninger}
