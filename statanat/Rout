@@ -1,19 +1,33 @@
-> summary(lm(rain$rain~rain$treatment))
+> percent <- read.table("percent.txt", header=T)
+> summary(lm(percent))
 
 Call:
-lm(formula = rain$rain ~ rain$treatment)
+lm(formula = percent)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--437.88 -209.93 -138.39   -9.39 2303.62 
+-1.9452 -1.1421  0.1273  1.1048  1.7361 
 
 Coefficients:
-                           Estimate Std. Error t value Pr(>|t|)  
-(Intercept)                  164.59      98.16   1.677   0.0998 .
-rain$treatmentsilverIodide   277.40     138.82   1.998   0.0511 .
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.30446    0.65270  -0.466    0.649    
+Perc         0.30907    0.01292  23.914 3.94e-12 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
 
-Residual standard error: 500.5 on 50 degrees of freedom
-Multiple R-squared: 0.07395,	Adjusted R-squared: 0.05543 
-F-statistic: 3.993 on 1 and 50 DF,  p-value: 0.05114 
+Residual standard error: 1.322 on 13 degrees of freedom
+Multiple R-squared: 0.9778,	Adjusted R-squared: 0.9761 
+F-statistic: 571.9 on 1 and 13 DF,  p-value: 3.94e-12 
+
+> t.test(percent)
+
+	One Sample t-test
+
+data:  percent 
+t = 6.1178, df = 29, p-value = 1.153e-06
+alternative hypothesis: true mean is not equal to 0 
+95 percent confidence interval:
+ 18.65519 37.39215 
+sample estimates:
+mean of x 
+ 28.02367 
