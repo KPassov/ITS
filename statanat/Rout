@@ -1,33 +1,27 @@
 > rain <- read.table("rain.txt", header=T)
 > rain$rain = log(rain$rain)
-> myType <- relevel(rain$treatment, ref="control")
-> oneway <- lm(rain$rain~myType)
-> summary(oneway)
+> control <- subset(rain,treatment == 'control')
+> silverIodide <- subset(rain,treatment == 'silverIodide')
+> 
+> difference = silverIodide$rain - control$rain
+> diffModel <- lm(difference~1)
+> summary(diffModel)
 
 Call:
-lm(formula = rain$rain ~ myType)
+lm(formula = difference ~ 1)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--3.9904 -0.7453  0.1624  1.0187  3.1018 
+-0.6918 -0.3257  0.0452  0.3268  0.5475 
 
 Coefficients:
-                   Estimate Std. Error t value Pr(>|t|)    
-(Intercept)          3.9904     0.3179  12.554   <2e-16 ***
-myTypesilverIodide   1.1438     0.4495   2.544   0.0141 *  
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.14378    0.07076   16.16 9.56e-15 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
 
-Residual standard error: 1.621 on 50 degrees of freedom
-Multiple R-squared: 0.1146,	Adjusted R-squared: 0.09693 
-F-statistic: 6.474 on 1 and 50 DF,  p-value: 0.01408 
+Residual standard error: 0.3608 on 25 degrees of freedom
 
-> anova(oneway)
-Analysis of Variance Table
-
-Response: rain$rain
-          Df  Sum Sq Mean Sq F value  Pr(>F)  
-myType     1  17.007 17.0071  6.4738 0.01408 *
-Residuals 50 131.353  2.6271                  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+> confint(diffModel)
+                2.5 %   97.5 %
+(Intercept) 0.9980584 1.289504
