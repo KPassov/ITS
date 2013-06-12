@@ -1,0 +1,10 @@
+rain <- read.table("rain.txt", header=T)
+
+control <- subset(rain,treatment == 'control')
+silverIodide <- subset(rain,treatment == 'silverIodide')
+logControl <- log(control$rain)
+logSilverIodide <- log(silverIodide$rain)
+boxplot(control$rain)
+boxplot(logControl)
+plot(control$rain)
+plot(logControl)

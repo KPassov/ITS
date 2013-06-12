@@ -1,0 +1,19 @@
+> rain <- read.table("rain.txt", header=T)
+> control <- subset(rain,treatment == 'control')
+> logControl <- log(control$rain)
+> summary(lm(logControl~1))
+
+Call:
+lm(formula = logControl ~ 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.9904 -0.7790 -0.2041  1.0789  3.1018 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    3.990      0.322   12.39 3.59e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.642 on 25 degrees of freedom
