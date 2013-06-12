@@ -1,33 +1,14 @@
-> percent <- read.table("percent.txt", header=T)
-> summary(lm(percent))
+simulate <- function(){ 
+  mean = 10;n = 5;sd = 5
+  X=rnorm(n, mean, sd)
+  return(3/n * sum(X) - 2 * mean / n)
+}
 
-Call:
-lm(formula = percent)
+Y = 0
+for(i in 1:10000) {
+  Y[i] <- simulate()
+}
 
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.9452 -1.1421  0.1273  1.1048  1.7361 
-
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept) -0.30446    0.65270  -0.466    0.649    
-Perc         0.30907    0.01292  23.914 3.94e-12 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
-
-Residual standard error: 1.322 on 13 degrees of freedom
-Multiple R-squared: 0.9778,	Adjusted R-squared: 0.9761 
-F-statistic: 571.9 on 1 and 13 DF,  p-value: 3.94e-12 
-
-> t.test(percent)
-
-	One Sample t-test
-
-data:  percent 
-t = 6.1178, df = 29, p-value = 1.153e-06
-alternative hypothesis: true mean is not equal to 0 
-95 percent confidence interval:
- 18.65519 37.39215 
-sample estimates:
-mean of x 
- 28.02367 
+hist(Y,breaks=500)
+abline(v = mean(Y), col = "blue", lwd=2)
+}
