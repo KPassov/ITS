@@ -1,3 +1,19 @@
-> confint(lm(logControl~1))
-               2.5 %   97.5 %
-(Intercept) 3.327249 4.653562
+> summary(lm(rain$rain~rain$treatment))
+
+Call:
+lm(formula = rain$rain ~ rain$treatment)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-437.88 -209.93 -138.39   -9.39 2303.62 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                  164.59      98.16   1.677   0.0998 .
+rain$treatmentsilverIodide   277.40     138.82   1.998   0.0511 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 500.5 on 50 degrees of freedom
+Multiple R-squared: 0.07395,	Adjusted R-squared: 0.05543 
+F-statistic: 3.993 on 1 and 50 DF,  p-value: 0.05114 
