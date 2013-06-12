@@ -1,14 +1,33 @@
-simulate <- function(){ 
-  mean = 10;n = 5;sd = 5
-  X=rnorm(n, mean, sd)
-  return(3/n * sum(X) - 2 * mean / n)
-}
+> rain <- read.table("rain.txt", header=T)
+> rain$rain = log(rain$rain)
+> myType <- relevel(rain$treatment, ref="control")
+> oneway <- lm(rain$rain~myType)
+> summary(oneway)
 
-Y = 0
-for(i in 1:10000) {
-  Y[i] <- simulate()
-}
+Call:
+lm(formula = rain$rain ~ myType)
 
-hist(Y,breaks=500)
-abline(v = mean(Y), col = "blue", lwd=2)
-}
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.9904 -0.7453  0.1624  1.0187  3.1018 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          3.9904     0.3179  12.554   <2e-16 ***
+myTypesilverIodide   1.1438     0.4495   2.544   0.0141 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.621 on 50 degrees of freedom
+Multiple R-squared: 0.1146,	Adjusted R-squared: 0.09693 
+F-statistic: 6.474 on 1 and 50 DF,  p-value: 0.01408 
+
+> anova(oneway)
+Analysis of Variance Table
+
+Response: rain$rain
+          Df  Sum Sq Mean Sq F value  Pr(>F)  
+myType     1  17.007 17.0071  6.4738 0.01408 *
+Residuals 50 131.353  2.6271                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
