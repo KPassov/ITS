@@ -1,12 +1,12 @@
 \documentclass{article}
 
- \usepackage[utf8]{inputenc} %Stationær ÆØÅ
-%\usepackage[ansinew]{inputenc} %Bærbar ÆØÅ?
+ % \usepackage[utf8]{inputenc} %Stationær ÆØÅ
+\usepackage[ansinew]{inputenc} %Bærbar ÆØÅ?
 
 %\usepackage{url} % Allows hyperlinks
 \usepackage[hyphens]{url} %URLs
 \usepackage{graphicx} % Allows figures
-\usepackage{etoolbox} %for configuration of sloppy
+% \usepackage{etoolbox} %for configuration of sloppy
 
 %Section style
 \usepackage{xcolor}
@@ -18,7 +18,7 @@
 \makeatother
 %end section style
 
-\apptocmd{\sloppy}{\hbadness 10000\relax}{}{} %adds hbadness to sloppy
+% \apptocmd{\sloppy}{\hbadness 10000\relax}{}{} %adds hbadness to sloppy
 \setlength{\paperheight}{297mm} %Sets the page to an A4
 \setlength{\paperwidth}{210mm}	%Sets the page to an A4
 
@@ -51,15 +51,12 @@ Den ene er 3 sider i de sociale netværker Facebook, Twitter og LinkedIn som jeg
 \paragraph{Internt system}
 Det sidste system, Yammer, er et lukket socialt netværk for alle firmaets ansatte. Systemet lader dem blandt andet opdatere arbejdsstatus og danne projektgrupper. Jeg vil referer til dette netværk som et internt system, da mange af de trusler og sårbarheder Yammer er udsat for ville kunne bruges på lignende systemer i fremtiden.
 
-%\subsection{Sikkerhedsmål}
+\subsection{Sikkerhedsmål}
 
-%Sikkerhedsmålet for de eksterne systemer er 
-
-%Internt
-%Et sikkert system der lader ansatte dele information nemt og hurtigt hvor som helst og når som helst.
-
-%Eksternt
-%Et system der lader firmaet snakke og dele information med den bredere befolkning, for f.eks. at finde dygtige medarbejdere og for at reklamere for udviklinger lavet.
+Sikkerheds målet for de tre eksterne netværker, er at have beskyttede kontier og passwords,
+samt at have siderne let tilgængelige. Det interne system Yammer, skal have adgangsniveauer
+så hver ansat kun har tilgang til det nødvendige. Ud over at beskytte kontierne skal de ansatte
+have nem adgang til siden.
 
 \section{Aktiver}
 \subsection{Eksterne systemer}
@@ -84,31 +81,20 @@ Uden de ansattes adgang til Yammer, vil dette cloud system ikke være sikkerheds
 
 \paragraph{Hackere}
 
-\paragraph{}
+\paragraph{Konkurenter}
 
-Internt:
-Hackere
-(Utilfredse ansatte)
-
-
-Eksternt:
-Konkurenter
-Hackere
-(Utilfredse ansatte)
+\paragraph{Ultilfredse ansatte}
 
 \section{Trusler}
 
-Internt:
+\subsection{komprimering af udbyders side}
 
-Udbyder leaker passwords
-Ansatte mister passwords
+\subsection{Ansatte's passwords komprimenteres}
 
-Eksternt:
-
-Udbyder Leaked passwords
-Ansatte mister passwords
+\subsection{Utilfredse ansatte lækker fortrolig information}
 
 \subsection{Relevante angreb}
+
 \subsubsection{AP's Twitter-konto}
 
 \begin{figure}
@@ -116,38 +102,75 @@ Ansatte mister passwords
     \includegraphics[width=0.6\textwidth]{../Pictures/APTweet.jpg}
   \end{center}
   \caption{Tweeten fra hackeren over nyhedsbureauet Associated Press \cite{APTweetSource}}
+  \label{fig:Tweet}
 \end{figure}
 
 \paragraph{Angreb}
- 
+
+To af Associated Press' twitter sider blev den 23 april 2013 hacket of en falsk nyhedsmeddelse blev udsendt. Tweetet kan ses på figur \ref{fig:Tweet}
+
 \paragraph{Relevans for BIOmedix}
 
-Et sådan angreb kan fjerne tilid og lade konkurrenter samt ondsindede hacker sprede misinformation in BIOmedix navn 
+Et sådan angreb på BIOmedix kan fjerne tilhængernes tiliden til de externe sider, da følgere til siderne
+ønsker nyheder fra BIOmedxi og ikke missinformation. Derudover kan en sådan hacking lade konkurrenter
+samt ondsindede hacker sprede misinformation i BIOmedix navn. 
+
 \subsubsection{LinkedIn password-lækage}
 
 \paragraph{Angreb}
+På et forum lagde brugeren "dwdm" 8 millioner crypterede passwords op og bad om hjælp
+til at bryde dem. Det viser sig at de 8 millioner passwords blandt andet er fra siden LinkedIn.
+Det spekuleres at angriberen allerede havde brudt de en meget stor del af LinkedIn's brugere, da
+der var omkring 120 millioner brugere på LinkedIn's side da listen blev frigjort. Dette kan betyde
+at "dwdm" allerede havde brudt de svagere passwords, og de 8 millioner var det subset af passwords
+han ikke kunne bryde alene\cite{LinkedInStory}.
 
 \paragraph{Relevans for BIOmedix}
 
-Et stort leak af passwords fra en sådan side kunne betyde alle BIOmedix' sociale medie sider ville være usikre, hvis det samme password var brugt overalt. Kig information igennem for ændringer, og skift password. SØRG FOR DER ER FORSKELLIGE PASSWORDS TIL ALLE SIDER DER BRUGER SAMME MAIL! 
+Et stort lækage af passwords fra en sådan side kunne betyde alle BIOmedix'
+sociale medie sider ville være usikre, hvis det samme password og brugernavn var 
+brugt overalt.
+Hvis en sådan lækage skete og blev kendt, skal passworded på den pågældene side, samt
+alle sider der benytter det samme password ændres. Derefter skal alt information på
+siden tjekkes igennem for ændringer.
+Selvom et sådan angreb næppe er gjort af nogen der er intereseret i BIOmedix siden, er
+det muligt listen af passwords er blevet solgt til en intereseret konkurent. Derfor kan
+det ikke ignoreres selv hvis det ikke er konkurenter der har lavet angrebet.
+
+\subsubsection{Ex-CIA ansat påstår at have vidergivet NSA hemmeligheder} 
+
+\paragraph{Angreb}
+En tidligere CIA agent påstår at være kilden til de hemmelige dokumenter der er blevet
+lækket til flere nyhedssider. Den lækkede information omhandler et program kaldet PRISM 
+den amerikanse efterretningstjeneste bruger til at spionere på privat personer.
+
+\paragraph{Relevans for BIOmedix}
+En utilfreds ansat ville kunne videregive fortrogelig information. Et eksempel kunne være hvilken
+forskning BIOmedix er igang med. Denne information kunne være interesant for konkurenter, da det ville
+give dem muligheden for at forske i det samme, og potentielt tage en patent eller udgive resultater
+inden BIOmedix er klar til det.
+
 
 \section{Sårbarheder}
 
 Ansattes password styrke.
 Kritisk information er ikke på firmastyret servere.
-
+Fishing attempts
+En bruger på alle tre sider
+Social netværk hacket
 
 \section{Modforanstaltninger}
 
-Password styrke og brug
-
 \section{Risici}
-
-
 
 \section{Foreslåede modforanstaltninger}
 
+\paragraph{Firewall for Yammer}
+Så kun ip'er fra biomedix kan logge på
 
+\paragraph{Password kursus til medarbejdere}
+
+Password styrke og brug
 
 \section{Konklusion}
 
@@ -160,5 +183,7 @@ Password styrke og brug
 \url{www.businessinsider.com/ap-hacked-obama-injured-white-house-explosions-2013-4}
 \bibitem{APTweetStory} 
 \url{www.guardian.co.uk/business/2013/apr/23/ap-tweet-hack-wall-street-freefall}
+\bibitem{LinkedInStory}
+\url{http://arstechnica.com/security/2012/06/8-million-leaked-passwords-connected-to-linkedin}
 \end{thebibliography}
 \end{document}
