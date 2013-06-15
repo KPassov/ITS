@@ -53,10 +53,8 @@ Det sidste system, Yammer, er et lukket socialt netværk for alle firmaets ansat
 
 \subsection{Sikkerhedsmål}
 
-Sikkerheds målet for de tre eksterne netværker, er at have beskyttede kontier og passwords,
-samt at have siderne let tilgængelige. Det interne system Yammer, skal have adgangsniveauer
-så hver ansat kun har tilgang til det nødvendige. Ud over at beskytte kontierne skal de ansatte
-have nem adgang til siden.
+Sikkerheds målet for både de interne og eksterne netværker, er at have beskyttede kontier og passwords,
+samt at have siderne let tilgængelige. 
 
 \section{Aktiver}
 \subsection{Eksterne systemer}
@@ -68,7 +66,7 @@ Informationen på det interne system Yammer skal beskyttes fra udekommende, da d
 \subsection{Begrundelse for aktiver}
 
 \paragraph{Spredning af information}
-De eksterne systemers primære funktion er at give firmaet en kommunikations kanal til den brede befolkning. Dette kan både være en nyhed om et gennembrud, et opslag til en ny stilling eller general information om firmaet. Denne aktiv skal beskyttes ved at holde kommunikations linjen åben og så uhindret som mulig.
+De eksterne systemers primære funktion er at give firmaet en kommunikations kanal til den brede befolkning. Dette kan både være en nyhed om et gennembrud, et opslag til en ny stilling eller general information om firmaet. Aktiven skal bruges til at hæve firmaets omdømme. Aktivet skal beskyttes ved at holde kommunikations linjen åben og så uhindret som mulig.
 
 \paragraph{Information på det interne system}
 Yammer kommer til at indeholde hvad de ansatte arbejder på, hvem de arbejder med, forskningsidéer og filer. Et brud på dette netværk vil blotte alt information BIOmedix har, og gøre det muligt for konkurrenter eller patenttrolde at se hvor langt BIOmedix er med et stykke forskning, og muligvis presse en patent frem inden BIOmedix kan færdiggøre sig. 
@@ -79,19 +77,61 @@ Uden de ansattes adgang til Yammer, vil dette cloud system ikke være sikkerheds
 
 \section{Trusselsaktører}
 
-\paragraph{Hackere}
 
 \paragraph{Konkurenter}
+Konkurenterne vil have en interesse i den information og forskning BIOmedix laver.
+Derfor må de ses som dem der har mest at vinde ved at bryde ind i systemerne og derfor
+den største trussel.
 
 \paragraph{Ultilfredse ansatte}
+En ultifreds ansat kan lække information kritisk for BIOmedix' forskning.
+
+% Derfor er det vigtigt at holde øje og arbejde med ansatte der er ultifredse.
+
+% \paragraph{Ondsindene}
+
+
+\paragraph{Internet vandaler}
+Det er ikke unormalt for nogen hackere at udnytte et sikkerhedshul i et firma
+uden et specifikt formål. De gør dette fordi de kan og syntes det er sjovt. Dette
+betyder de oftes går efter sider der har kendte sikkerhedshuller.
+Den eneste måde at beskytte sig imod denne gruppe, er at holde sig opdateret indenfor de
+seneste sikkerhedshuller, og holde sit system så sikkert de ikke gider bruge
+energi på at bryde det.
+
+\paragraph{Internet sabotører}
 
 \section{Trusler}
 
-\subsection{komprimering af udbyders side}
+\begin{table}
+    \begin{tabular}{l|l|l}
+         
+    \end{tabular}
+    \label{tab:Trusler}
+    \caption{Tabel over trusler!}
+\end{table}
 
-\subsection{Ansatte's passwords komprimenteres}
+\paragraph{Komprimering af udbyders side}
+Hvis en af udbydernes side bliver komprimeret, risikere BIOmedix alt information
+den side er i besidelse af. Dette behøver ikke kun være brugere og passwords til
+den pågældene side, men også kreditkort information hvis det er bundet til
+sider som facebook kunne være i farer.
 
-\subsection{Utilfredse ansatte lækker fortrolig information}
+\paragraph{Yammer konto kompromenteres}
+I det interne netværk Yammer vil et kompromeret bruger betyde alt information
+delt med den bruger kan ses som delt med offentligheden. Dette skal ses som et
+meget seriøst problem da denne side tit vil indeholde kritisk information.
+
+\paragraph{Extern konto kompromeres}
+De eksterne netværk har højst et par kritiske brugere, da det fra firmaet kun er 
+kommunikationsafdelingen der behøver adgang til siden. Dette betyder dog også
+alle kontoer vil være meget kritiske da de alle vil have adminstratoradgang til
+siden. Hvis en af disse kontoer blive kompromeret kan det have seriøse konsekvenser
+for tiliden til firmaet.
+
+\paragraph{Fortrolig information lækkage}
+
+????????????????
 
 \subsection{Relevante angreb}
 
@@ -107,7 +147,7 @@ Uden de ansattes adgang til Yammer, vil dette cloud system ikke være sikkerheds
 
 \paragraph{Angreb}
 
-To af Associated Press' twitter sider blev den 23 april 2013 hacket of en falsk nyhedsmeddelse blev udsendt. Tweetet kan ses på figur \ref{fig:Tweet}
+To af Associated Press' twitter sider blev den 23 april 2013 hacket of en falsk nyhedsmeddelse blev udsendt\cite{TweetStory}. Tweetet kan ses på figur \ref{fig:Tweet}
 
 \paragraph{Relevans for BIOmedix}
 
@@ -142,7 +182,7 @@ det ikke ignoreres selv hvis det ikke er konkurenter der har lavet angrebet.
 \paragraph{Angreb}
 En tidligere CIA agent påstår at være kilden til de hemmelige dokumenter der er blevet
 lækket til flere nyhedssider. Den lækkede information omhandler et program kaldet PRISM 
-den amerikanse efterretningstjeneste bruger til at spionere på privat personer.
+den amerikanse efterretningstjeneste bruger til at spionere på privat personer\cite{CIAStory}.
 
 \paragraph{Relevans for BIOmedix}
 En utilfreds ansat ville kunne videregive fortrogelig information. Et eksempel kunne være hvilken
@@ -160,6 +200,8 @@ En bruger på alle tre sider
 Social netværk hacket
 
 \section{Modforanstaltninger}
+
+Passwords og brugere
 
 \section{Risici}
 
@@ -181,9 +223,11 @@ Password styrke og brug
 
 \bibitem{APTweetSource}
 \url{www.businessinsider.com/ap-hacked-obama-injured-white-house-explosions-2013-4}
-\bibitem{APTweetStory} 
+\bibitem{TweetStory} 
 \url{www.guardian.co.uk/business/2013/apr/23/ap-tweet-hack-wall-street-freefall}
 \bibitem{LinkedInStory}
 \url{http://arstechnica.com/security/2012/06/8-million-leaked-passwords-connected-to-linkedin}
+\bibitem{CIAStory}
+\url{www.ticotimes.net/More-news/News-Briefs/Ex-CIA-employee-says-he-leaked-NSA-secrets_Sunday-June-09-2013}
 \end{thebibliography}
 \end{document}
