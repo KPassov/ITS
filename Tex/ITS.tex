@@ -7,7 +7,7 @@
 \usepackage[hyphens]{url} %URLs
 \usepackage{graphicx} % Allows figures
 % \usepackage{etoolbox} %for configuration of sloppy
-
+\usepackage{tabularx}
 %Section style
 \usepackage{xcolor}
 
@@ -68,11 +68,13 @@ Informationen på det interne system Yammer skal beskyttes fra udekommende, da d
 \paragraph{Spredning af information}
 De eksterne systemers primære funktion er at give firmaet en kommunikations kanal til den brede befolkning. Dette kan både være en nyhed om et gennembrud, et opslag til en ny stilling eller general information om firmaet. Aktiven skal bruges til at hæve firmaets omdømme. Aktivet skal beskyttes ved at holde kommunikations linjen åben og så uhindret som mulig.
 
-\paragraph{Information på det interne system}
+\paragraph{Internt information}
 Yammer kommer til at indeholde hvad de ansatte arbejder på, hvem de arbejder med, forskningsidéer og filer. Et brud på dette netværk vil blotte alt information BIOmedix har, og gøre det muligt for konkurrenter eller patenttrolde at se hvor langt BIOmedix er med et stykke forskning, og muligvis presse en patent frem inden BIOmedix kan færdiggøre sig. 
 
-\paragraph{Adgang til Yammer}
-Uden de ansattes adgang til Yammer, vil dette cloud system ikke være sikkerheds risikoen værd. Derfor skal det gøres så nemt som muligt for de ansatte at få adgang til Yammer, gerne både på arbejdspladsen og i hvert ansats hjem.  
+\paragraph{Ansattes input}
+Uden de ansattes adgang til Yammer, vil dette cloud system ikke være sikkerheds risikoen værd. 
+Derfor skal det gøres så nemt som muligt for at de ansattes adgang til Yammer ikke bliver 
+hindret af sikkerhedsforanstalninger.  
 
 
 \section{Trusselsaktører}
@@ -97,41 +99,75 @@ uden et specifikt formål. De gør dette fordi de kan og syntes det er sjovt. De
 betyder de oftes går efter sider der har kendte sikkerhedshuller.
 Den eneste måde at beskytte sig imod denne gruppe, er at holde sig opdateret indenfor de
 seneste sikkerhedshuller, og holde sit system så sikkert de ikke gider bruge
-energi på at bryde det.
+energi på at bryde det.\\
+Det er også tit denne gruppe der benytter sig af en stor mængde computere
+til et koordineret DoS angreb, hvis formål er at nedlægge systemet.
 
 \paragraph{Internet sabotører}
+Internet sabotører er betydeligt farligere end vandaler, da de angriber med
+et formål. De er tit ude efter et specifikt stykke information eller er 
+blevet hyret til at nedlægge systemet i en kritisk periode. De skal i store
+træk håndteres på samme måde som vandalerne, men de er betydelig mere stædige
+i deres angreb.
 
 \section{Trusler}
 
-\begin{table}
-    \begin{tabular}{l|l|l}
-         
+\begin{table}[h!]
+    \begin{tabular}{l|l|l|l}
+        Trussel                                    & Sandsynlighed & Konsekvens & Risiko\\\hline
+        Udbyder lækker passwords                   & 1 & 2 & Lav\\
+        Malware password lækkage                   & 4 & 4 & Ekstrem\\
+        Medarbejder lækage                        & 2 & 4 & Høj\\
+        For strenge password regler                & 2 & 2 & Lav\\
+        Phishing password lækage                  & 3 & 4 & Høj
     \end{tabular}
     \label{tab:Trusler}
-    \caption{Tabel over trusler!}
+    \caption{Sandsynlighed og konsekvens for de forskellige trusler. Tals betydning kan ses på side 505-507 \cite{Bog}, Risiko niveau er fundet ved hjælp af tabel 14.4 på side 508 \cite{Bog}.}
 \end{table}
 
-\paragraph{Komprimering af udbyders side}
+\paragraph{Udbyder lækker passwords}
 Hvis en af udbydernes side bliver komprimeret, risikere BIOmedix alt information
 den side er i besidelse af. Dette behøver ikke kun være brugere og passwords til
 den pågældene side, men også kreditkort information hvis det er bundet til
 sider som facebook kunne være i farer.
 
-\paragraph{Yammer konto kompromenteres}
-I det interne netværk Yammer vil et kompromeret bruger betyde alt information
-delt med den bruger kan ses som delt med offentligheden. Dette skal ses som et
-meget seriøst problem da denne side tit vil indeholde kritisk information.
+\paragraph{Medarbejder lækage}
+En ultilfreds medarbejder kan lække kritisk information til konkurenter
+eller andre intereserede udekommende. Da BIOmedix har en forholdsvis lille
+medarbejder gruppe er risikoen for en sådan lækage ikke stor, men konsekvensen
+ville være seriøs. Dette er fordi hvis en medarbejder lækker information
+vil det være kritisk information.
 
-\paragraph{Extern konto kompromeres}
+\paragraph{Yammer konto mistet via phishing}
+En ansat får en mail fra en person der siger han er hans chef eller
+IT-ansvarlige og skal bruge hans brugernavn og password. Mailen 
+indeholder derefter en trussel om at den ansatte mister sit job hvis 
+informationen ikke bliver videregivet.\\
+En sådan mail vil kunne få mange ansatte til at give sit password fra
+sig, hvis de ikke er informeret om denne form for trussel. 
+I det interne netværk Yammer vil et kompromeret bruger betyde alt information
+denne bruger har adgang til muligvist er blevet delt medi angriberen. 
+Dette skal ses som et meget seriøst problem da dette tit vil indeholde kritisk information.
+
+\paragraph{Extern konto mistet via phishing}
 De eksterne netværk har højst et par kritiske brugere, da det fra firmaet kun er 
 kommunikationsafdelingen der behøver adgang til siden. Dette betyder dog også
 alle kontoer vil være meget kritiske da de alle vil have adminstratoradgang til
 siden. Hvis en af disse kontoer blive kompromeret kan det have seriøse konsekvenser
 for tiliden til firmaet.
 
-\paragraph{Fortrolig information lækkage}
+\paragraph{For strenge password regler}
+Hvis meget strenge sikkerhedsforanstaltninger kommer i brug, kan det betyde
+medarbejderne får problemer med at udfører deres arbejde. Et 12 bogstaver langt
+password der ugeligt skal ændres og skal indeholde tegn, tal samt store og små
+bogstaver, vil give mange ansatte store problemer og kan derigennem nedsætte
+produktiviteten unødigt.
 
-????????????????
+\paragraph{Passwords lækket via Malware}
+Malware af forskellige art kan blive overført til ansattes computere. Dette malware
+kan så opsnappe passwords og brugernavne, og sende det ud til angriberens computer.\\
+Dette kan opsnappe både interne og eksterne passwords alt efter hvilken computer der
+er infestet. 
 
 \subsection{Relevante angreb}
 
@@ -193,29 +229,84 @@ inden BIOmedix er klar til det.
 
 \section{Sårbarheder}
 
-Ansattes password styrke.
-Kritisk information er ikke på firmastyret servere.
-Fishing attempts
-En bruger på alle tre sider
-Social netværk hacket
+\paragraph{Ansattes password styrke}
+Hvis de ansatte får lov til selv at sætte passwords, vil de glemsomme 
+tit have svage passwords, der vil være genbrugt over mange sider.
+Derudover er der flere måder hvorpå en ansats password kan falde i de
+forkerte hænder, som phishing og lækkager fra netværkssiderne.
+% Hvis et password bliver kompromitteret vil  
+
+\paragraph{Kritisk information er ikke på firmastyret servere}
+Da Yammer kommer til at indeholde store mængder af kritisk information,
+kan det blive et problem for BIOmedix at de ikke har kontrol over
+sikkerheden af den information. De er afhængige af Yammer's 
+sikkerhedsprotokoler og kan ikke selv indføre nye foranstaltninger hvis
+BIOmedix mener det er nødvendigt.
+
+\paragraph{En bruger på alle tre sider}
+Hvis den samme bruger bliver brugt på alle tre sider, vil det betyde
+at et mistet password vil kræve en gennemgang på alle tre sider. Dette
+gælder også for passwords som "BIOmedixFacebook" og "BIOmedixLinkedIn" 
+som værende ens.
+
+\paragraph{En konto til eksterne sider}
+Da der kun er en konto til de eksterne sider som Facebook, vil en
+lækkage af disse sider potentielt have meget store konsekvenser.
+Angriberen vil igennem denne konto have fuld kontrol over siden
+og det kan blive svært at få kontrol tilbage.
 
 \section{Modforanstaltninger}
 
-Passwords og brugere
+\paragraph{Passwords på alle kontoer}
+Vores første og sidste forsvarslinje i både de interne og eksterne
+netværker, er passwords. Det er disse hemmelige passwords der skal
+lade de ansatte komme ind på siderne og holde andre ude. 
+
+\paragraph{Håndplukket adgang til adminstratorkontoer}
+For at sikre de eksterne sider er det kun kommunikationsmedarbejderne der har 
+adgang til kontoerne.
+
+\paragraph{Yammers sikkerhed}
+Yammer har et antal sikkerhedsforanstaltninger. Blandt andet benytter de
+kun https og har en logisk firewall så kun specifike ip'er kan komme ind
+i netværket. For en længere liste af Yammers sikkerhed\cite{YammerSec}. 
 
 \section{Risici}
+For at gøre tabellen mere læsbar har jeg lavet forfortelser af aktiv navnene. 
+\begin{itemize}
+    \item{Intern information:} II
+    \item{Spredning af information:} SI
+    \item{Ansates input:} AI
+\end{itemize}
+Trussels samt risiko niveau informationen er taget fra tabel \ref{tab:Trusler}. 
 
-\section{Foreslåede modforanstaltninger}
-
-\paragraph{Firewall for Yammer}
-Så kun ip'er fra biomedix kan logge på
-
-\paragraph{Password kursus til medarbejdere}
-
-Password styrke og brug
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabularx}{\textwidth}{l|X|X|l|l}
+            Aktiv    & Trussel                              & Foranstaltning      & Risiko & Prioritet \\  \hline 
+            II/SI    & Malware password lækage              & Firewall, antivirus & Ekstrem& 1\\
+            II/SI    & Phishing password lækage             & Politiker           & Høj    & 2\\ 
+            II       & Medarbejder lækage                   & Politiker           & Høj    & 3\\
+            II       & Udbyder lækker passwords             &                     & Lav    & 4\\
+            AI       & For strenge password regler          &                     & Lav    & 5\\
+        \end{tabularx}
+    \end{center}
+    \caption{Risici register}
+    \label{tab:riskReg}
+\end{table}
 
 \section{Konklusion}
 
+\paragraph{Yammer's logiske firewall}
+Så kun ip'er fra biomedix kan logge på
+
+\paragraph{Password kursus til medarbejdere}
+Password styrke og brug, samt GIV ALDRIG DIG PASSWORD TIL NOGEN
+
+\paragraph{Yammer's Password configuration}
+Tving stærke passwords
+
+\paragraph{Forskellige passwords til hvert netværk}
 
 \newpage
 \begin{thebibliography}{100}
@@ -229,5 +320,10 @@ Password styrke og brug
 \url{http://arstechnica.com/security/2012/06/8-million-leaked-passwords-connected-to-linkedin}
 \bibitem{CIAStory}
 \url{www.ticotimes.net/More-news/News-Briefs/Ex-CIA-employee-says-he-leaked-NSA-secrets_Sunday-June-09-2013}
+\bibitem{YammerSec}
+\url{https://www.yammer.com/wp-content/uploads/2012/03/Security_One_Pager_PDF.pdf}
+\bibitem{Bog}
+    Computer Security principles and practice,\\
+    William Stallings, Lawrie Brown
 \end{thebibliography}
 \end{document}
