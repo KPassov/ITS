@@ -292,19 +292,52 @@ Trussels samt risiko niveau informationen er taget fra tabel \ref{tab:Trusler}.
     \caption{Risici register}
     \label{tab:riskReg}
 \end{table}
+ 
+\subsection{Risici analyse}
 
-\section{Konklusion}
+Tabellen \ref{tab:riskReg} viser stort focus bør være på malware og phishing angreb
+der er målrettet de ansattes passwords og bruger kontier. Yammer har indbyggede 
+værktøjer til at mindske sandsynligheden for det sker (Password configuration) og
+konsekvensen (logisk firewall). Derudover kan firmaet mindske sandsynligheden (Password kursus)
+og konsekvensen for de eksterne sider (forskellige kontoer). Whitelisting kan benyttes for
+at undgå ansatte ved et uheld kommer til at downloade malware, systemerne skal holdes opdateret
+og en scanning skal ske regelmæssigt for at fjerne alt der kommer igennem de første forsvarslag.
 
 \paragraph{Yammer's logiske firewall}
-Så kun ip'er fra biomedix kan logge på
-
-\paragraph{Password kursus til medarbejdere}
-Password styrke og brug, samt GIV ALDRIG DIG PASSWORD TIL NOGEN
+Yammer har en logisk firewall der kun lader en række ip addreser specifiseret af firmaet
+få adgang til firmaets side. Dette er selvom personen besider de korrekte login information.
+En aktivering af denne sikkerhedsforanstaltning vil ikke have nogen effekt på medarbejdere
+der arbejder fra kontoret, men vil gøre angreb betydelig mere besværligt. Da angriberen
+både skal have fat i login kontoerne, men også enten have fysisk adgang til BIOmedix netværk
+eller kunne forfalske sin ip.
 
 \paragraph{Yammer's Password configuration}
-Tving stærke passwords
+Yammer har en configuration der tvinger medarbejdere til at have passwords af en hvis styrke.
+At aktivere denne sikkerhedforanstaltning vil sørge for alle ansattes passwords er af en
+acceptable styrke og derigennem gør en lækage af de crypterede passwords mindre farligt.
+
+\paragraph{Password kursus til medarbejdere}
+Alle medarbejdere burde blive opsat til et password kursus, hvor de får fortalt god password 
+skik. Dette skal inkludere information om hvad et stærkt password bør og ikke bør indeholde,
+samt general brug af passwords. De skal have at vide de ikke må give deres password til 
+hverken IT adminstratoren eller deres chef. Kurset skal også forklarer dem at kritiske sider
+som Yammer skal have unikke passwords som skal ændres med jævne mellemrum. 
 
 \paragraph{Forskellige passwords til hvert netværk}
+Ved at have et unikt password til hvert netværk vil en komromittering af det ene netværk ikke
+have en indflydelse på de andre. Dette kan også bruges som et hjælpemiddel i tilfælde af en
+lækage. Hvis der er unike passwords og alle tre sider er blevet infiltreret, man det betyde
+at det enten er netværket der er infiseret med malware, eller en ansat har læket information.
+
+\paragraph{Alle systemer skal holdes opdateret}
+Når alle systemer er opdateret, bliver de huller som f.eks. Java eller Adobe har lukket efterhånden
+som de bliver fundet. Systemopdatering skal indeholde styrersystemmet, plugins samt alt software
+de ansatte benytter.
+
+\paragraph{Whitelist hjemmesider}
+Alle sider de ansatte kan komme til at bruge skal på en whitelist. Disse sider skal være de
+eneste de ansatte kan få adgang til. Dette skal gøres for at undgå de ansatte surfer rundt 
+på sider der kan indeholde malware.
 
 \newpage
 \begin{thebibliography}{100}
